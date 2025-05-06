@@ -33,12 +33,12 @@ button:hover {
 	include "connect.php";
 	$key = $_GET["keyword"];
 	echo "<h2>Items containing: $key<br><h2>";
-	$sql = "SELECT itemNAME, itemstatus FROM recycle WHERE itemname ILIKE '%" . $key . "%'";
+	$sql = "SELECT itemname, itemstatus FROM recycle WHERE itemname ILIKE '%" . $key . "%'";
 	$result = $pdo->query($sql);
 	if ($result->rowCount() > 0) {
   	// output data of each row
   		while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    		echo "Name: " . $row["itemNAME"] . ", Status: " . $row["itemSTATUS"] . "<br><br>";
+    		echo "Name: " . $row["itemname"] . ", Status: " . $row["itemstatus"] . "<br><br>";
   		}
   		echo "<div align = \"center\">
 		<a href = \"index.php\">
