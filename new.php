@@ -32,7 +32,7 @@
 	$new_item = $_GET["newitem"];
 	$new_status = $_GET["newstatus"];
 
-	$sql = "INSERT INTO `recycle`(`itemNAME`,`itemSTATUS`) VALUES ('$new_item','$new_status')";
+	$sql = "INSERT INTO `recycle`(`itemname`,`itemstatus`) VALUES ('$new_item','$new_status')";
 	$result = $pdo->query($sql);
 	?>
 

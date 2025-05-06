@@ -33,7 +33,7 @@ button:hover {
 	include "connect.php";
 	$key = $_GET["keyword"];
 	echo "<h2>Items containing: $key<br><h2>";
-	$sql = "SELECT itemNAME, itemSTATUS FROM recycle WHERE itemNAME ILIKE '%" . $key . "%'";
+	$sql = "SELECT itemNAME, itemstatus FROM recycle WHERE itemname ILIKE '%" . $key . "%'";
 	$result = $pdo->query($sql);
 	if ($result->rowCount() > 0) {
   	// output data of each row
