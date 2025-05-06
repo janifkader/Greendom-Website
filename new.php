@@ -33,8 +33,7 @@
 	$new_status = $_GET["newstatus"];
 
 	$sql = "INSERT INTO `recycle`(`itemNAME`,`itemSTATUS`) VALUES ('$new_item','$new_status')";
-	$result = $mysqli->query($sql);
-	$mysqli->close();
+	$result = $pdo->query($sql);
 	?>
 
 	<div align = "center">

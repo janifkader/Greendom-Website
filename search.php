@@ -34,10 +34,10 @@ button:hover {
 	$key = $_GET["keyword"];
 	echo "<h2>Items containing: $key<br><h2>";
 	$sql = "SELECT itemNAME, itemSTATUS FROM recycle WHERE itemNAME LIKE '%" . $key . "%'";
-	$result = $mysqli->query($sql);
-	if ($result->num_rows > 0) {
+	$result = $pdo->query($sql);
+	if ($result->rowCount() > 0) {
   	// output data of each row
-  		while($row = $result->fetch_assoc()) {
+  		while($row = $result->fetch(PDO::FETCH_ASSOC)) {
     		echo "Name: " . $row["itemNAME"] . ", Status: " . $row["itemSTATUS"] . "<br><br>";
   		}
   		echo "<div align = \"center\">
@@ -54,7 +54,6 @@ button:hover {
 </div>";
 	}
 
-	$mysqli->close();
 ?>
 </body>
 </html>
