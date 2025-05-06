@@ -40,11 +40,6 @@ button:hover {
   		while($row = $result->fetch(PDO::FETCH_ASSOC)) {
     		echo "Name: " . $row["itemname"] . ", Status: " . $row["itemstatus"] . "<br><br>";
   		}
-  		echo "<div align = \"center\">
-		<a href = \"index.php\">
-			<button>Return to Greendom</button>
-		</a>
-	</div>";
 	} 
 	else {
   		echo "Zero Results<br><div>
@@ -53,6 +48,11 @@ button:hover {
 	</a>
 </div>";
 	}
+	echo "<div align = \"center\">
+		<a href = \"index.php\">
+			<button>Return to Greendom</button>
+		</a>
+	</div>";
 
 ?>
 </body>
